@@ -27,16 +27,60 @@
         }
 
         .button {
-            display: inline-block;
-            padding: 15px 30px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            background: linear-gradient(145deg, #e74c3c, #c0392b);
-            border-radius: 10px;
-            text-decoration: none;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-        }
+          display: inline-block;
+          padding: 20px 40px;
+          color: white;
+          position: relative;
+          font-family: Arial, sans-serif;
+          font-weight: bold;
+          text-decoration: none;
+          font-size: 18px;
+          transition: all .5s;
+          background-color: #3498db;
+      }
+
+      .button::before,
+      .button::after {
+          content: '';
+          position: absolute;
+          transition: all .5s;
+      }
+
+      .button::before {
+          bottom: -10px;
+          height: 10px;
+          width: 100%;
+          left: 6px;
+          transform: skewX(45deg);
+          background-color: #217dbb;
+      }
+
+      .button::after {
+          right: -10px;
+          height: 100%;
+          width: 10px;
+          bottom: -6px;
+          transform: skewY(45deg);
+          background-color: #1a5f91;
+      }
+
+      .button:active {
+          margin-left: 5px;
+          margin-top: 5px;
+      }
+
+      .button:active::before {
+          bottom: -5px;
+          height: 5px;
+          left: 3px;
+      }
+
+      .button:active::after {
+          right: -5px;
+          width: 5px;
+          bottom: -3px;
+      }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(4, 2fr);
